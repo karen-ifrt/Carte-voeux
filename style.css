@@ -1,0 +1,340 @@
+/* RESET CSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    font-family: 'Caveat', cursive;
+    overflow: hidden;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* FIN DU RESET CSS */
+
+/**************/
+/* FORMULAIRE */
+/**************/
+
+.fermer {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+}
+
+form {
+    border: 2px solid #B78D5C;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px 100px;
+    font-size: 1.5rem;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 10px;
+    top: 200px;
+    left: 20px;
+    opacity: 0;
+    z-index: 150;
+}
+
+.opacity {
+    opacity: 1;
+    animation: formulaire 2s;
+    overflow: hidden;
+}
+
+@keyframes formulaire {
+    from {
+        height: 0;
+    }
+    to {
+        height: 394px;
+    }
+}
+
+form h2 {
+    text-align: center;
+    color: #9D1B23;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    margin-top: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 5px 15px;
+    border: 1px solid #B78D5C;
+}
+
+label {
+    color: #006837;
+    font-weight: bold;
+}
+
+#myemail {
+    margin-top: 0;
+}
+
+input {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #B78D5C;
+    padding: 5px 15px;
+}
+
+input::placeholder, textarea::placeholder {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#submit {
+    padding: 5px 10px;
+    background: #006837;
+    border: 1px solid #006837;
+    border-radius: 8px;
+    font-family: 'Caveat', cursive;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: all .3s;
+    cursor: pointer;
+    text-align:center;
+}
+
+#submit:hover {
+    background: #fff;
+    color: #006837;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #006837;
+}
+
+.error {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.8rem;
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.thank-you {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #006837;
+    font-weight: bold;
+}
+
+/** LOADER **/
+
+/* .loader {
+    position : fixed;
+    z-index: 99;
+    background : url('images/Christmas_Loading_SVG.svg') 50% 50% no-repeat;
+    top : 0px;
+    left : 0px;
+    height : 100%;
+    width : 100%;
+    cursor : wait;
+} */
+
+/** SVG **/
+
+#svg-christmas {
+    height: 100vh;
+    text-align: center;
+    background-color: #2f435a;
+    max-width: 100%;
+}
+
+.tree {
+    width: 700px;
+}
+
+.close {
+    animation: formdown 2s linear;
+}
+
+@keyframes formdown {
+    from {
+        height: 394px;
+    }
+    to {
+        height: 0;
+    }
+}
+
+.share {
+    z-index: 99;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 250px;
+    transform: rotate(-30deg);
+    cursor: pointer;
+    animation: sharing 3s infinite;
+}
+
+@keyframes sharing {
+    from {
+        transform: rotate(-30deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-30deg);
+    }
+}
+
+#snowball {
+    transform-origin: center;
+    animation: snowmove 1s linear infinite alternate;
+}
+
+#mains {
+    transform-origin: center;
+    animation: handmove 1s linear infinite alternate;
+}
+
+@keyframes handmove {
+    from {
+        transform: rotate(-2deg);
+    }
+    to {
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes snowmove {
+    from {
+        transform: rotate(-10deg);
+    }
+
+    to {
+        transform: rotate(20deg);
+
+    }
+}
+
+.reindeer {
+    position: absolute;
+    bottom: 100px;
+    right: -220px;
+    z-index: 99;
+    animation: rotate 3s infinite linear alternate;
+    transform-origin: bottom;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-60deg);
+    }
+}
+
+.snow {
+    transform: scale(1.1);
+    transform-origin: center;
+}
+
+.stars {
+    width: 30px;
+    position: absolute;
+    animation: tombeNeige 5s infinite linear;
+}
+
+@keyframes tombeNeige{
+    from{
+        top: -10px;
+    }
+    to{
+        top: 760px;
+    }
+}
+
+
+.perenoel {
+    position: relative;
+    z-index: 10;
+}
+
+.christmas-bag {
+    position: absolute;
+    top: 350px;
+    left: 400px;
+    z-index: 102;
+    animation: bagmove 3s linear infinite;
+}
+
+@keyframes bagmove {
+    from {
+        left: -20px;
+        bottom: 0;
+    }
+
+    20% {
+        bottom: 20px;
+    }
+
+    40% {
+        bottom: 0;
+    }
+
+    60% {
+        bottom: 20px;
+    }
+
+    80% {
+        bottom: 0;
+    }
+
+    to{
+        left: 400px;
+        bottom: 20px;
+    }
+}
