@@ -59,6 +59,8 @@ partage.addEventListener('click', function (e) {
     e.preventDefault();
     formulaire.classList.add("opacity");
     formulaire.classList.remove("close");
+    partage.classList.remove("sharemove");
+    partage.classList.remove("cursor-share");
 })
 
 // Disparition formulaire
@@ -68,9 +70,11 @@ let close = document.querySelector("#fermer");
 fermer.addEventListener('click', function(e) {
     e.preventDefault();
     formulaire.classList.add("close");
+    partage.classList.add("sharemove");
+    partage.classList.add("cursor-share");
     setTimeout(() => {
         formulaire.classList.remove("opacity");
-    }, 2000);
+    }, 1000);
 })
 
 
@@ -131,7 +135,6 @@ for (let i = 0; i < snow.length; i++) {
 setInterval(() => {
     let snow = document.querySelectorAll('.snow');
 
-    // Boules de neige père noel
     for (let i = 0; i < snow.length; i++) {
         const element = snow[i];
         randColor(element);
@@ -139,10 +142,25 @@ setInterval(() => {
 
 }, 2000);
 
-function randColor(lui) {
+function randColor(bouleneige) {
     var colors = ['#F79432', '#9F1E29', '#0D6244', '#9EBBDB', '#ffffff', "#418364", "#f55656"];
     var random_color = colors[Math.floor(Math.random() * colors.length)];
 
-    lui.removeAttribute("fill");
-    lui.setAttribute("fill", random_color);
+    bouleneige.removeAttribute("fill");
+    bouleneige.setAttribute("fill", random_color);
 }
+
+// Sac du père noel
+
+let bag = document.querySelector("#christmas-bag");
+
+bag.addEventListener("mouseover", function(e) {
+    e.preventDefault();
+    bag.classList.add("bagshake");
+})
+
+bag.addEventListener("mouseout", function(e) {
+    e.preventDefault();
+    bag.classList.remove("bagshake");
+    bag.classList.remove("bagmove");
+})

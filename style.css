@@ -106,6 +106,7 @@ textarea {
     font-family: 'Roboto Condensed', sans-serif;
     padding: 5px 15px;
     border: 1px solid #B78D5C;
+    border-radius: 4px;
 }
 
 label {
@@ -122,6 +123,7 @@ input {
     margin-top: 10px;
     border: 1px solid #B78D5C;
     padding: 5px 15px;
+    border-radius: 4px;
 }
 
 input::placeholder, textarea::placeholder {
@@ -192,7 +194,7 @@ input:focus, textarea:focus {
 }
 
 .close {
-    animation: formdown 2s linear;
+    animation: formdown 1s linear;
 }
 
 @keyframes formdown {
@@ -211,7 +213,13 @@ input:focus, textarea:focus {
     left: 20px;
     width: 250px;
     transform: rotate(-30deg);
+}
+
+.cursor-share {
     cursor: pointer;
+}
+
+.sharemove {
     animation: sharing 3s infinite;
 }
 
@@ -305,36 +313,114 @@ input:focus, textarea:focus {
 
 .christmas-bag {
     position: absolute;
-    top: 350px;
-    left: 400px;
+    top: 330px;
+    left: 450px;
     z-index: 102;
-    animation: bagmove 3s linear infinite;
+}
+
+.bagmove {
+    animation: bagmove 3s linear normal;
+}
+
+.bagshake {
+    animation: bagshake 1s linear infinite alternate;
+}
+
+@keyframes bagshake {
+    from {
+        transform: rotate(-10deg);
+    }
+
+    to {
+        transform: rotate(10deg);
+    }
 }
 
 @keyframes bagmove {
     from {
         left: -20px;
-        bottom: 0;
+        top: 330px;
+    }
+
+    10% {
+        top: 350px;
     }
 
     20% {
-        bottom: 20px;
+        top: 330px;
+    }
+
+    30% {
+        top: 350px;
     }
 
     40% {
-        bottom: 0;
+        top: 330px;
+    }
+
+    50% {
+        top: 350px;
     }
 
     60% {
-        bottom: 20px;
+        top: 330px;
+    }
+
+    70% {
+        top: 350px;
     }
 
     80% {
-        bottom: 0;
+        top: 330px;
+    }
+
+    90% {
+        top: 350px;
     }
 
     to{
-        left: 400px;
-        bottom: 20px;
+        left: 450px;
+        top: 330px;
+    }
+}
+
+.sleigh {
+    position: absolute;
+    top: 0;
+    animation: sleighmove 10s infinite linear;
+}
+
+@keyframes sleighmove {
+    from {
+        right: -100px;
+        top: 0;
+        transform: scaleX(1);
+    }
+
+    30% {
+        right: 1400px;
+        top: 100px;
+        transform: scaleX(1);
+    }
+
+    31% {
+        transform: scaleX(-1);
+    }
+
+    60% {
+        right: 50px;
+        top: 300px;
+        transform: scaleX(-1);
+    }
+
+    61% {
+        transform: scaleX(1);
+    }
+
+    to {
+        right: 1500px;
+        top: 700px;
+        transform: scaleX(1);
+
     }
 }
